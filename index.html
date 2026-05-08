@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prognose Saúde - Cuidado humanizado para uma vida em equilíbrio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#396c5a",
+                      "tertiary": "#783a4c",
+                      "primary-fixed-dim": "#9ed2bb",
+                      "primary": "#255645",
+                      "surface-tint": "#366855",
+                      "inverse-primary": "#9ed2bb",
+                      "on-surface-variant": "#404944",
+                      "tertiary-fixed": "#ffd9e0",
+                      "tertiary-container": "#955163",
+                      "on-error": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "secondary": "#356856",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-low": "#f0f3ff",
+                      "secondary-container": "#b5ebd5",
+                      "surface-container": "#e7eefe",
+                      "primary-container": "#3e6f5c",
+                      "on-primary-fixed-variant": "#1d4f3e",
+                      "secondary-fixed": "#b8eed8",
+                      "on-primary-fixed": "#002116",
+                      "tertiary-fixed-dim": "#ffb1c3",
+                      "outline-variant": "#c0c9c3",
+                      "surface-variant": "#dce2f3",
+                      "on-primary-container": "#bbf0d8",
+                      "on-surface": "#151c27",
+                      "inverse-on-surface": "#ebf1ff",
+                      "error-container": "#ffdad6",
+                      "outline": "#707974",
+                      "on-secondary-fixed": "#002117",
+                      "on-background": "#151c27",
+                      "surface-container-highest": "#dce2f3",
+                      "surface-container-high": "#e2e8f8",
+                      "inverse-surface": "#2a313d",
+                      "on-tertiary-fixed-variant": "#703345",
+                      "surface-dim": "#d3daea",
+                      "primary-fixed": "#b9eed6",
+                      "surface-bright": "#f9f9ff",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed": "#3a071a",
+                      "secondary-fixed-dim": "#9cd2bc",
+                      "on-tertiary-container": "#ffdbe2",
+                      "surface": "#f9f9ff",
+                      "background": "#f9f9ff",
+                      "on-secondary-fixed-variant": "#1a4f3f",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "gutter": "24px",
+                      "xs": "4px",
+                      "sm": "12px",
+                      "md": "24px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "16px",
+                      "xl": "80px",
+                      "lg": "48px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Manrope"],
+                      "body-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "display-xl": ["Manrope"],
+                      "headline-md": ["Manrope"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-sm": ["13px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ambient-shadow {
+            box-shadow: 0 12px 24px rgba(62, 111, 92, 0.04);
+        }
+        .ambient-shadow-hover:hover {
+            box-shadow: 0 24px 48px rgba(62, 111, 92, 0.08);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        .glass-icon {
+            background: rgba(184, 238, 216, 0.2);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar Shell -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm dark:shadow-none dock-full-width top-0 sticky z-50">
+<div class="max-w-7xl mx-auto px-margin-desktop flex justify-between items-center h-20">
+<div class="flex items-center gap-sm">
+<div class="h-12 flex items-center justify-center">
+<img alt="Prognose Saúde Logo" class="h-full w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uh3hYcqdsB2w4OmRkP0PwN_Y4WC2n3mrB8XtvZOx6Ahsj-hU9mAGGvRNnI9UTuDy7Pa_6E2CCKbSjGkuslF0DkNZ8u21vdH4tsal6oe3FeeHvMbmmjIfSO-556FhLyu9nH-8eDtYdgR4R8enLnmnUqHG1_xU-PRnOlW1YEIJp3iAihSGYqXy1tJGCNRHbmVbaLVCGc8KQzIVXJdCcEH60SCGszZj2liAXLwIgivQrPTTBbPPoEFa6c8YB6qDIfD7LJOcEg4DMRVTw"/>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Prognose Saúde</span>
+</div>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#especialidades">Especialidades</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#diferenciais">Diferenciais</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#depoimentos">Depoimentos</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#contato">Contato</a>
+</nav>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-xl font-body-md text-body-md font-semibold hover:opacity-90 active:scale-95 transition-all">
+                Agendar Consulta
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center overflow-hidden bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-xl items-center py-xl">
+<div class="z-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm mb-md">
+                        SAÚDE E BEM-ESTAR INTEGRADOS
+                    </span>
+<h1 class="font-display-xl text-display-xl text-on-surface mb-md leading-tight">Cuidando da saúde dos pequenos com carinho, atenção e <span class="text-primary">profissionalismo.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-xl">Na Prognose Saúde, cada criança é atendida com paciência, cuidado e um ambiente pensado para que ela se sinta segura e acolhida.</p>
+<div class="flex flex-wrap gap-md">
+<a class="flex items-center gap-sm bg-[#3E6F5C] text-white px-lg py-md rounded-xl font-headline-md text-body-md font-bold hover:shadow-lg transition-all active:scale-95" href="https://wa.me/55000000000"><span class="material-symbols-outlined">chat</span> Agendar consulta pelo WhatsApp</a>
+<a class="flex items-center gap-sm border-2 border-primary text-primary px-lg py-md rounded-xl font-headline-md text-body-md font-bold hover:bg-primary/5 transition-all" href="#especialidades">
+                            Nossas Especialidades
+                        </a>
+</div>
+</div>
+<div class="relative hidden lg:block">
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-tertiary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+<div class="absolute -bottom-12 -left-12 w-72 h-72 bg-secondary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+<img alt="Clínica Prognose Saúde" class="relative z-10 w-full aspect-[4/5] object-cover rounded-[32px] shadow-2xl" data-alt="A bright and airy modern medical clinic reception area featuring minimalist architecture, warm oak wood accents, and plush soft gray seating. Large windows allow soft natural sunlight to fill the space, creating a serene and welcoming atmosphere. The professional environment is balanced with lush indoor plants and a clean, high-end medical aesthetic in shades of primary green and soft whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoofuMquUmpAifpOSf4Oe1IikXgNvRCrQsxyWalAlBmQZAJXXUT8D0D3CtKuKDwooI3w55K0tu1phUzsoRHkLJl3GVEt5OrE0HDTT7Sn4WRhCdloelRpxZTEv7n7C302ZbLcfgarykZJWYlx-qFp-3IwFe9sFD8yXycaDhaoNsFGDDE_oa0plp8HAbezNGCzPVDJ3yYC7S2-NOwMg2unhWuMTaKOu3gGaTn_kXi_pXglPTpzw2b0QW1raEjCRP2wg2W2HoVqEto2wR"/>
+<div class="absolute bottom-12 -left-8 z-20 bg-white/90 backdrop-blur p-md rounded-xl ambient-shadow flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="font-headline-md text-body-md font-bold text-on-surface">Atendimento VIP</p>
+<p class="font-body-md text-label-sm text-on-surface-variant">Experiência premium personalizada</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-xl bg-white">
+<div class="max-w-7xl mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div class="order-2 md:order-1">
+<img alt="Interior da Clínica" class="w-full aspect-square object-cover rounded-[32px] ambient-shadow" data-alt="A close-up high-quality professional photograph of a modern medical consulting room. The space features clean white surfaces, ergonomic designer furniture, and state-of-the-art medical equipment subtly integrated into the decor. The lighting is soft and flattering, emphasizing the quiet confidence and sophisticated medical expertise of the Prognose Saúde clinic. Minimalist art on the walls provides a touch of calming color." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiQu1hP3q9CWs7GIDtY3TgLPW8ZkvSR4tcNLqqAz_qFc2IJxZgSDcTfkwBpQa75MUCaEU_GvKRbdX6n79ICA6wWeeLrH4-Wy7HsxABAvSKnLJ93pOZJny4O0Uw-MCWpcsmuJnkTmlcpbMEu5BxXlR7IrNNcPPAcT6fuMTBuT_L2vuk0fXGPFy-421DY_MjLgcfdVkIFOK-ioLkDmITs1_lI8999BCbAkNLA0xaLQ7o65yjZUqyWvLez3pFZkZ6dxwleFZLGxwYv3c0"/>
+</div>
+<div class="order-1 md:order-2">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-md">Um espaço pensado para crianças e famílias</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-md leading-relaxed">A Prognose Saúde é uma clínica preparada para atender crianças com todo o cuidado que elas merecem. Nosso ambiente é acolhedor, tranquilo e planejado para que os pequenos se sintam à vontade, enquanto os pais têm a segurança de um atendimento profissional e humanizado.</p>
+<div class="grid grid-cols-2 gap-md">
+<div class="p-md bg-surface-container-low rounded-xl">
+<p class="text-primary font-display-xl text-headline-lg mb-xs">15+</p>
+<p class="text-on-surface-variant font-label-sm text-label-sm">Especialistas</p>
+</div>
+<div class="p-md bg-surface-container-low rounded-xl">
+<p class="text-primary font-display-xl text-headline-lg mb-xs">10k+</p>
+<p class="text-on-surface-variant font-label-sm text-label-sm">Vidas Cuidadas</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Specialties Section -->
+<section class="py-xl bg-surface-container-lowest" id="especialidades">
+<div class="max-w-7xl mx-auto px-margin-desktop">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Nossas Especialidades</h2>
+<div class="w-20 h-1 bg-tertiary-fixed-dim mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-md">
+<!-- Specialty 1 -->
+<div class="bg-white p-lg rounded-[20px] ambient-shadow ambient-shadow-hover text-center flex flex-col items-center">
+<div class="w-16 h-16 glass-icon rounded-2xl flex items-center justify-center text-primary mb-md">
+<span class="material-symbols-outlined text-[32px]">medical_information</span>
+</div>
+<h3 class="font-headline-md text-body-md font-bold mb-xs">Clínica Geral Infantil</h3>
+<p class="text-on-surface-variant text-label-sm">Cuidado integral e preventivo</p>
+</div>
+<!-- Specialty 2 -->
+<div class="bg-white p-lg rounded-[20px] ambient-shadow ambient-shadow-hover text-center flex flex-col items-center">
+<div class="w-16 h-16 glass-icon rounded-2xl flex items-center justify-center text-primary mb-md">
+<span class="material-symbols-outlined text-[32px]">psychology</span>
+</div>
+<h3 class="font-headline-md text-body-md font-bold mb-xs">Psicologia Infantil</h3>
+<p class="text-on-surface-variant text-label-sm">Equilíbrio mental e emocional</p>
+</div>
+<!-- Specialty 3 -->
+<div class="bg-white p-lg rounded-[20px] ambient-shadow ambient-shadow-hover text-center flex flex-col items-center">
+<div class="w-16 h-16 glass-icon rounded-2xl flex items-center justify-center text-primary mb-md">
+<span class="material-symbols-outlined text-[32px]">nutrition</span>
+</div>
+<h3 class="font-headline-md text-body-md font-bold mb-xs">Nutrição Infantil</h3>
+<p class="text-on-surface-variant text-label-sm">Alimentação consciente e saúde</p>
+</div>
+<!-- Specialty 4 -->
+<div class="bg-white p-lg rounded-[20px] ambient-shadow ambient-shadow-hover text-center flex flex-col items-center">
+<div class="w-16 h-16 glass-icon rounded-2xl flex items-center justify-center text-primary mb-md">
+<span class="material-symbols-outlined text-[32px]">physical_therapy</span>
+</div>
+<h3 class="font-headline-md text-body-md font-bold mb-xs">Fisioterapia Infantil</h3>
+<p class="text-on-surface-variant text-label-sm">Reabilitação e performance</p>
+</div>
+<!-- Specialty 5 -->
+<div class="bg-white p-lg rounded-[20px] ambient-shadow ambient-shadow-hover text-center flex flex-col items-center">
+<div class="w-16 h-16 glass-icon rounded-2xl flex items-center justify-center text-primary mb-md">
+<span class="material-symbols-outlined text-[32px]">biotech</span>
+</div>
+<h3 class="font-headline-md text-body-md font-bold mb-xs">Exames</h3>
+<p class="text-on-surface-variant text-label-sm">Cuidado infantil laboratorial</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Differentials Section -->
+<section class="py-xl bg-white overflow-hidden" id="diferenciais">
+<div class="max-w-7xl mx-auto px-margin-desktop">
+<div class="flex flex-col lg:flex-row gap-xl items-center">
+<div class="w-full lg:w-1/3">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-md">Por que escolher a Prognose Saúde para seu filho?</h2>
+<div class="space-y-sm">
+<div class="flex items-center gap-md p-md rounded-xl hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-body-md font-semibold">Atendimento humanizado para crianças</span>
+</div>
+<div class="flex items-center gap-md p-md rounded-xl hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-body-md font-semibold">Profissionais preparados para o público infantil</span>
+</div>
+<div class="flex items-center gap-md p-md rounded-xl hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">spa</span>
+<span class="font-body-md font-semibold">Ambiente leve, acolhedor e seguro</span>
+</div>
+<div class="flex items-center gap-md p-md rounded-xl hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+<span class="font-body-md font-semibold">Paciência, carinho e atenção em cada consulta</span>
+</div>
+<div class="flex items-center gap-md p-md rounded-xl hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="font-body-md font-semibold">Facilidade no agendamento</span>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-2/3 grid grid-cols-2 gap-md">
+<img alt="Equipe Médica" class="w-full aspect-[4/5] object-cover rounded-3xl" data-alt="A professional medical team of three smiling doctors—two women and one man—standing confidently in a modern, brightly lit clinic hallway. They are wearing crisp white medical coats and stethoscopes, conveying warmth, approachability, and high-level medical expertise. The environment is clean and professional with soft green accent walls and modern lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq1V6S6LlUQMS5anhDDr8Pn6k-IfaaMqN_rsdYKWia6S12WNofSdg6R6ImiiMevhZOK0P_kfnPvqeEwSAuV0A-PG-UYgvYTe0crI0qc4dgpS9ImqlPG3x05kas0gMAF5q_XcIBuL_5s3Sg68Wn0RPPdbCo10ucYbQCIF6I5DRyu1P5kfhD4cy6L0ph5tufUu3-Lu56pLgeYyF7D2a_9ufgrxGQEN9zv3VzXaMr5nD_AEMGol0zF9pXQN6xx22RkzN8sJGPeYXn3Utu"/>
+<img alt="Ambiente da Clínica" class="w-full aspect-[4/5] object-cover rounded-3xl mt-xl" data-alt="A serene close-up of a modern clinic's patient lounge, featuring high-end minimalist furniture, soft organic textures, and a calming color palette of primary green and soft pink. A decorative glass vase with eucalyptus branches sits on a light wood coffee table. The atmosphere is peaceful and evokes a sense of holistic wellness and luxury healthcare." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFSjjSTCGrNUbiMJPE13qj1KE8MQnXfrimFOmF-FTxzJKXSGOdwNl3gRgU2B1Iwy0XVBV05ezZ8W7izRIeUDti46LnZTb2GNAB-hqT2bz-jO88ejyNNziLu68Kb9bvtY5gXDwUSPqAvXG8CuEACrlYhBBZoXOT7PWgo0SBTrf6_1T5guPBujBmvMHMdm_EqpE9APS8kpWDNtf6PwhlTQjhdWksHwbTcKxe5RZosxTvzw0KyLHfsIf0ttVqc9vcsBaavuiOniHPw9xL"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-xl bg-surface-container" id="depoimentos">
+<div class="max-w-7xl mx-auto px-margin-desktop">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">O que dizem nossos pacientes</h2>
+<p class="text-on-surface-variant font-body-md">Experiências reais de quem confia no nosso cuidado.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Testimonial 1 -->
+<div class="bg-white p-lg rounded-2xl shadow-sm border border-outline-variant/30 relative">
+<div class="text-[#F5A3B7] mb-md flex">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface-variant mb-lg font-body-md leading-relaxed">"Finalmente encontrei um lugar onde meu filho não tem medo de ir ao médico. O carinho das pediatras é emocionante."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed-dim"></div>
+<div>
+<p class="font-body-md font-bold">Mariana Silva</p>
+<p class="font-label-sm text-on-surface-variant text-label-sm">Mãe do Léo, 4 anos</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white p-lg rounded-2xl shadow-sm border border-outline-variant/30 relative">
+<div class="text-[#F5A3B7] mb-md flex">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface-variant mb-lg font-body-md leading-relaxed">"A nutrição infantil mudou a rotina da nossa casa. O atendimento é lúdico e focado no bem-estar da criança e da família."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed-dim"></div>
+<div>
+<p class="font-body-md font-bold">Ricardo Santos</p>
+<p class="font-label-sm text-on-surface-variant text-label-sm">Pai da Sofia, 7 anos</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-lg rounded-2xl shadow-sm border border-outline-variant/30 relative">
+<div class="text-[#F5A3B7] mb-md flex">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface-variant mb-lg font-body-md leading-relaxed">"Os exames foram super tranquilos. A equipe tem um jeito especial com as crianças que faz toda a diferença no diagnóstico."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed-dim"></div>
+<div>
+<p class="font-body-md font-bold">Beatriz Gomes</p>
+<p class="font-label-sm text-on-surface-variant text-label-sm">Mãe da Alice, 2 anos</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-xl bg-white" id="contato">
+<div class="max-w-7xl mx-auto px-margin-desktop">
+<div class="bg-primary rounded-[32px] overflow-hidden flex flex-col md:flex-row shadow-2xl">
+<div class="p-xl text-on-primary flex-1">
+<h2 class="font-headline-lg text-headline-lg mb-lg">Cuide da saúde de quem você ama</h2>
+<div class="space-y-md mb-xl">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined mt-1">location_on</span>
+<div>
+<p class="font-bold">Endereço</p>
+<p class="opacity-80">Av. da Saúde, 1000 - Sala 402<br/>Jardins, São Paulo - SP</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined mt-1">call</span>
+<div>
+<p class="font-bold">Telefone</p>
+<p class="opacity-80">(11) 4002-8922</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined mt-1">schedule</span>
+<div>
+<p class="font-bold">Horário de Atendimento</p>
+<p class="opacity-80">Segunda a Sexta: 08:00 - 19:00<br/>Sábado: 08:00 - 12:00</p>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-md">
+<button class="bg-white text-primary px-lg py-sm rounded-xl font-bold flex items-center gap-sm hover:bg-opacity-90 transition-all">
+<span class="material-symbols-outlined">chat</span>
+                                Falar no WhatsApp
+                            </button>
+<button class="border-2 border-white/30 text-white px-lg py-sm rounded-xl font-bold flex items-center gap-sm hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined">map</span>
+                                Ver no Mapa
+                            </button>
+</div>
+</div>
+<div class="w-full md:w-1/2 min-h-[300px] bg-outline-variant/20 relative">
+<!-- Placeholder for Map -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center p-xl">
+<span class="material-symbols-outlined text-display-xl text-primary mb-md">location_away</span>
+<p class="text-primary font-bold">Mapa Interativo Carregando...</p>
+</div>
+</div>
+<img alt="Localização" class="w-full h-full object-cover grayscale mix-blend-multiply opacity-50" data-alt="A stylized aerial view map of a modern metropolitan area with clean green and white color tones, highlighting the premium location of the clinic in a sophisticated neighborhood. The aesthetic is professional and modern, using minimalist cartography styles to match the Prognose Saúde brand identity." data-location="São Paulo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5XPEjhBA7XU4QRWUCaEOq6ddBDd9TDq8lmlMswC1qeIoPizEjkwfi3kHpW9yDDGKID-95lqiN3gArqyIC5Ug1RgWE0MRfM4o7PGZrIsI99gEoVsLhu4y9zh9Q1gINkbvM1roDJIyrKdXvaBWNGQDCfv_Kishs_zj77VOV7LlMhQF0UwlZ8QJrAp_G-LBddadzEUqkZpdDT3ZlBEwsACZiMXiCDso2sob3sFAon6lylZoPgXw60DfxeYih5W0AJ4F8LpqQdKeTySXe"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container dark:bg-inverse-surface border-t border-outline-variant dark:border-outline full-width">
+<div class="max-w-7xl mx-auto px-margin-desktop py-lg flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="flex items-center gap-sm">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Prognose Saúde</span>
+</div>
+<nav class="flex gap-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Privacidade</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Termos de Uso</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Trabalhe Conosco</a>
+</nav>
+<div class="flex gap-md">
+<a class="text-on-surface-variant hover:text-primary" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="text-on-surface-variant hover:text-primary" href="#"><span class="material-symbols-outlined">camera</span></a>
+<a class="text-on-surface-variant hover:text-primary" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md md:order-first">Prognose Saúde — Cuidando de você e de quem você mais ama. © 2026</p>
+</div>
+</footer>
+</body></html>
